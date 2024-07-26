@@ -1,110 +1,248 @@
-nav{
+/* Navigation Styles */
+nav {
     position: sticky;
-    top: 0px;
-    height: 50px;
-    margin: 10px;
+    top: 0;
+    height: 60px; /* Increased height for better visibility */
+    margin: 0 0 10px; /* Top margin reset, space below */
     z-index: 10;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-    background-color: rgba(0, 0, 0, 0.908);
-    color: white;
+    background-color: rgba(0, 123, 255, 0.9); /* Brighter blue background */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for better depth */
+    padding: 0 20px; /* Added padding for spacing */
+    font-family: Arial, sans-serif; /* Clean font style */
+}
+
+/* Root Container Styles */
+#root {
+    margin: 4% auto;
+    display: flex;
+    overflow-x: auto;
+    padding: 0 10px;
+    background: linear-gradient(to right, #f5f5f5, #e0e0e0);
+    font-family: Arial, sans-serif; /* Consistent font style */
+}
+
+/* Store Styles */
+.store {
+    position: relative;
+    padding: 20px; /* Increased padding for better spacing */
+    /* border: 2px solid #007bff;  */
+    min-width: 300px;
+    background-color: #fff;
+    margin-right: 20px; /* Increased space between stores */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Store Header Styles */
+.store > .header {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    padding: 15px 20px; /* Increased padding */
+    border-bottom: 3px solid #007bff; /* Thicker blue border */
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 12px 12px 0 0;
+    background: linear-gradient(to right, #ffffff, #f3f3f3); /* Subtle gradient */
+}
+
+/* Store Header Text Styles */
+.store > .header h1 {
+    margin: 0;
+    font-size: 1.8em; /* Larger font size for visibility */
+    color: #007bff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* More pronounced text shadow */
+}
+
+.store > .header h4 {
+    margin: 0;
+    font-size: 1.1em; /* Slightly larger font size */
+    color: #333;
+}
+
+/* Buttons Container Styles */
+.store .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6px; /* Slightly increased gap */
+    transition: opacity 0.3s ease; /* Smooth transition */
 }
 
 
-#root{
-    margin: 4%;
+/* Button Styles */
+.store .buttons button {
+    padding: 4px 8px; /* Slightly larger padding */
+    border: none;
+    border-radius: 4px; /* Slightly larger border-radius */
+    background-color: #28a745; /* Green background */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.7em; /* Slightly larger font size */
+}
+
+.store .buttons button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.store .buttons button.x {
+    background-color: #dc3545; /* Red for delete button */
+}
+
+.store .buttons button.x:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.store .buttons button.add {
+    background-color: #007bff; /* Blue for add button */
+}
+
+.store .buttons button.add:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Product Styles */
+.product {
+    border-top: 3px solid #17a2b8; /* Thicker cyan border */
+    padding: 15px; /* Increased padding */
     display: flex;
-    overflow-x: scroll;
+    flex-direction: column;
+    justify-content: space-between; /* Space between elements */
+    height: 550px; /* Increased height for larger images */
+    background-color: #f9f9f9; /* Lighter background color */
+    border-radius: 12px; /* More rounded corners */
+    margin-bottom: 20px; /* More space below products */
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
 
-    .store:hover{
-        .x{
-            display: block;
-        }
-    }
+/* Product Header Styles */
+.product > .header {
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 3px solid #17a2b8; /* Thicker cyan border */
+    margin-bottom: 15px;
+    border-radius: 10px; /* Slightly more rounded corners */
+    text-align: center;
+}
 
-    .store{
-        position: relative;
-        padding: 10px;
-        border: solid 1px black;
-        min-width: 300px;
+/* Product Name Styles */
+.product > .header h2 {
+    margin: 0;
+    font-size: 1.8em; /* Larger font size */
+    color: #343a40; /* Dark grey text */
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* More pronounced text shadow */
+    letter-spacing: 1px; /* Slightly increased letter spacing */
+}
 
-        >.header{
-            position: sticky;
-            top: 0px;
-            background-color: whitesmoke;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 4px;
-            padding-bottom: 4px;
+/* Item Styles */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: calc(100% - 70px); /* Adjust height to fit within product */
+    padding: 15px;
+    overflow: hidden;
+    /* background-color: whitesmoke; */
+}
 
-            >.buttons button{
-                display: none;
-            }
-            .add{
-                position: absolute;
-                right: 0%;
-                bottom: 0%;
-                border-radius: 10px;
-                border: solid 1px black;
-                padding: 1px;
-                background-color: rgb(14, 163, 14);
-                box-shadow: 1px 1px 1px black;
-                background: linear-gradient(90deg lightgreen, green);
-            }
-            .add:active{
-                transform: scale(.9);
-            }
-        }
+.product:hover{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    transform: scale(1.01);
+    border: 1px solid #0b57a8;
+}
 
-        >.header:hover{
-            >.buttons button{
-                display: block;
-            }
+/* Image Styles */
+.item .img {
+    width: 100%;
+    height: 100%; /* Full height */
+    overflow: hidden;
+    border-radius: 10px; /* Larger border-radius */
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px; /* Increased space below image */
+}
 
-        }
+.item img {
+    width: 100%;
+    height: 100%; /* Full size */
+    object-fit: cover; /* Cover container */
+    border-radius: 8px; /* Rounded corners for image */
+}
 
-        .x{
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: red;
-            border-radius: 4px;
+/* Arrow Buttons Container */
+.arrow-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: 4px; /* Increased gap between buttons */
+}
+
+/* Arrow Button Styles */
+.lt, .gt {
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 4px; /* Larger border-radius */
+    background-color: #fff; /* White background */
+    color: #007bff; /* Blue text */
+    padding: 4px 8px; /* Larger padding */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.9em; /* Slightly larger font size */
+}
+
+.lt {
+    color: #dc3545; /* Red for decrement button */
+}
+
+.gt {
+    color: #28a745; /* Green for increment button */
+}
+
+.lt:hover, .gt:hover {
+    background-color: #e9ecef; /* Light gray on hover */
+}
+
+.lt:active, .gt:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Paragraph Styles */
+.item p {
+    margin: 2px 0; /* Reduced margin between paragraphs */
+}
+
+
+
+
+.product{
+    text-align: center;
+    .buttons{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        button{
             display: none;
         }
-        
-
-        .product{
-            border-top: solid 1px darkcyan;
-            .lt{
-                color: orange;
-                border: none;
-            }
-            .gt{
-                border: none;
-                color: green;
-            }
-            .lt:hover, .gt:hover{
-                transform: scale(1.2);
-                cursor: pointer;
-            }
-        }
-
-        
-
-        .item{
-            text-shadow: 4px 4px 4px black;
-            padding: 30px;
-            /* border: solid 1px black;    */
-            .img{
-                aspect-ratio: 3/2;
-            }
-            img{
-                width: 100%;
-                height: 100%;
-            }
-        }
     }
+}
+
+.product:hover button{
+    display: block;
 }

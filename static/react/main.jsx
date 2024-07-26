@@ -16,10 +16,12 @@ function StoreComponent({store, appRerender}){
     )
     return(
         <>
+
         <div className="header">
                         <h1>{store.name}</h1>
                         <h4>total: ${thisStoresPriceTotal}</h4>
-                        <div className="buttons">
+                        
+            <div className="buttons">
                             <button className="x" onClick={() => {delete stores[store.name]; appRerender()}}>X</button>
                             <button className="add" onClick={() => addStoreToFavoriotes(store.name)}>add to favoriates</button>
                         </div>
